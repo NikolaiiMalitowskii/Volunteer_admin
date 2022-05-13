@@ -1,5 +1,5 @@
 import {UniversalPanelStyled} from "./UniversalPanelStyled";
-import {getEditorIcon} from "../../icons/editor.config";
+import {getEditorIcon} from "../../icons/common";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
 import ListItem from "./listItem/ListItem";
 import {useDispatch} from "react-redux";
@@ -96,9 +96,9 @@ const UniversalPanel = ({
             </div>}
             <div className="panelBody">
                 {children}
-                {!!items?.array?.length && <ul className="filteredItemsList">
+                {!!items?.array?.length ? <ul className="filteredItemsList">
                     {items.array.map(item => <ListItem item={item} schema={items.schema} key={item.id || item._id}/>)}
-                </ul>}
+                </ul> : <p className='filteredItemsListNoExist'>No items in this list yet</p>}
 
             </div>
             {!!bodyButtons?.length && <div className="panelBodyButtons">

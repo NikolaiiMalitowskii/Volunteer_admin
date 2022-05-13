@@ -1,5 +1,5 @@
 import {PanelTemplateStyled} from "./PanelTemplateStyled";
-import {getEditorIcon} from "../../../icons/editor.config";
+import {getEditorIcon} from "../../../icons/common";
 
 const PanelTemplate = ({icon='bookmark', title='no title', children}) => {
     return (

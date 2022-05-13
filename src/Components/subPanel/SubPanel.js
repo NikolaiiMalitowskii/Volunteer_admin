@@ -1,5 +1,5 @@
 import {SubPanelStyled} from "./SubPanelStyled";
-import {getEditorIcon} from "../../icons/editor.config";
+import {getEditorIcon} from "../../icons/common";
 
 const SubPanel = ({
                       children,

@@ -32,12 +32,12 @@ const userReducer = createReducer(
     {...initialState.user},
     {
         [signIn]: (_, {payload}) => payload.user,
-        [signOut]: () => ({...initialState}),
+        [signOut]: () => ({...initialState.user}),
     }
 );
 const tokenReducer = createReducer(initialState.tokens, {
     [signIn]: (_, {payload}) => payload.tokens,
-    [signOut]: () => "",
+    [signOut]: () => initialState.tokens,
 });
 
 const authError = createReducer("", {

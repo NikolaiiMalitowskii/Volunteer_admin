@@ -32,6 +32,7 @@ export const UniversalPanelStyled = styled.div`
     margin-right: 10px;
     color: #5F86BE;
   }
+
   .panelHeaderIcon {
     width: 100%;
     height: 100%;
@@ -71,7 +72,7 @@ export const UniversalPanelStyled = styled.div`
       margin-right: 5px;
     }
   }
-  
+
   .panelHeaderTitle {
     color: #5F86BE;
     font-size: 14px;
@@ -84,11 +85,16 @@ export const UniversalPanelStyled = styled.div`
     align-items: center;
   }
 
+  .filteredItemsListNoExist {
+    width: 100%;
+    padding: 10px;
+  }
+
   .panelBodyButtons {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: ${props=>props.isButtons ? '5px 0' : '0'};
+    margin: ${props => props.isButtons ? '5px 0' : '0'};
   }
 
   .panelBodyBottomButtonsItem {
@@ -106,8 +112,7 @@ export const UniversalPanelStyled = styled.div`
 
   .panelBodyBottomButtonsItem:last-child {
     border-radius: ${props => {
-      console.log(props)
-      return props.isButtons>=2 ? '0 14px 14px 0' : '14px'
+      return props.isButtons >= 2 ? '0 14px 14px 0' : '14px'
     }};
     border-right: none;
   }
@@ -174,9 +179,9 @@ export const UniversalPanelStyled = styled.div`
       border: 1px solid #5F86BE;
     }
   }
-  
+
   // mobileFilter
-  .mobileFilter{
+  .mobileFilter {
     height: 40px;
     width: 100%;
     background-color: #E5E6E6;
@@ -184,6 +189,7 @@ export const UniversalPanelStyled = styled.div`
     align-items: center;
     padding: 0 5px 0 10px;
   }
+
   .mobileFilterIconContainer {
     width: 18px;
     height: 18px;
@@ -226,9 +232,8 @@ export const UniversalPanelStyled = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    
+
   }
-  
 
 
   @media (min-width: 768px) {
@@ -242,10 +247,11 @@ export const UniversalPanelStyled = styled.div`
     .filteredItemsList {
       padding: 5px 5px 0 5px;
     }
+
     .panelBodyButtons {
       margin: 10px 0;
     }
-    
+
   }
 
   @media (min-width: 1024px) {

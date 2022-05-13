@@ -1,5 +1,5 @@
 import {EditedFieldListItemStyled} from "./EditedFieldListItemStyled";
-import {getEditorIcon} from "../../../../icons/editor.config";
+import {getEditorIcon} from "../../../../icons/common";
 import {useState} from "react";
 import Modal from "../../../modal/Modal";
 import PanelTemplate from "../../panelTemplate/PanelTemplate";

@@ -22,10 +22,10 @@ const Header = () => {
     return (
         <HeaderStyled>
             <Link to='/' className='titleLink'>
-                <Title in={true} appear timeout={1000}>
-                    <span className='titleFirst'>AD</span>
-                    <span className='titleSecond'>min</span>
-                </Title>
+                <h2>
+                    <span className='titleFirst'>Volunteer </span>
+                    <span className='titleSecond'>Logistic</span>
+                </h2>
             </Link>
             {!isMobileDevice && <Navigation/>}
             {isMobileDevice && (

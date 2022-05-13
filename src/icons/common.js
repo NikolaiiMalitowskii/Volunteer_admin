@@ -1,4 +1,4 @@
-import sprite from './editor.svg';
+import sprite from './commonSprite.svg';
 
 const iconContainer = {
     file: '#icon-file-text2',

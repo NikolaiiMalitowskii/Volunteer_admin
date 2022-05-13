@@ -33,10 +33,3 @@ export const HeaderStyled = styled.header`
   }
 `
 
-export const Title = transition.h2`
-  &:appear { opacity: 0.01; }
-  &:appear-active {
-    opacity: 1;
-    transition: opacity 1000ms ease-in;
-  }
-`;

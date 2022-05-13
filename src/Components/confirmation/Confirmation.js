@@ -1,6 +1,6 @@
 import {ConfirmationStyled} from "./ConfirmationStyled";
 import Modal from "../modal/Modal";
-import sprite from '../../icons/editor.svg'
+import sprite from '../../icons/commonSprite.svg'
 import {useEffect} from "react";
 
 const Confirmation = ({onHandleClose, onHandleDelete, text = 'Do you agree to delete selected item?'}) => {

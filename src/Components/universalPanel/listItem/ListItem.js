@@ -1,5 +1,5 @@
 import {ListItemStyled} from "./ListItemStyled";
-import {getEditorIcon} from "../../../icons/editor.config";
+import {getEditorIcon} from "../../../icons/common";
 import {useLocation, useNavigate} from 'react-router-dom';
 
 

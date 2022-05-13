@@ -1,6 +1,6 @@
 import {NewItemStyled} from "./NewItemStyled";
 import {useState} from "react";
-import {getEditorIcon} from "../../../icons/editor.config";
+import {getEditorIcon} from "../../../icons/common";
 import {useDispatch, useSelector} from "react-redux";
 import PanelTemplate from "../panelTemplate/PanelTemplate";
 import {rootConfigs} from "../../../redux/rootConfigs";
@@ -12,16 +12,6 @@ const createObjectWithFields = (fields) => {
     }, {})
 }
 
-const getType = (field) => {
-    switch (field) {
-        case 'email':
-            return 'email';
-        case 'password':
-            return 'password';
-        default:
-            return 'text'
-    }
-}
 
 const NewItem = ({newItem, buttons, toggleNewItemForm, schema}) => {
     const dispatch = useDispatch()
@@ -40,12 +30,17 @@ const NewItem = ({newItem, buttons, toggleNewItemForm, schema}) => {
         setItem(createObjectWithFields(newItem.fields))
     };
     const closeForm = async () => {
-        error && dispatch(rootConfigs[schema.collectionName].setItemByID(null));
+        // error && dispatch(rootConfigs[schema.collectionName].setItemByID(null));
         toggleNewItemForm();
     }
 
-    const onHandleSubmit = () => dispatch(newItem.addItemOperation(item, closeForm))
-
+    const onHandleSubmit = () => {
+        const data = {}
+        newItem.fields.forEach(field => field.converter
+            ? data[field.alias] = field.converter(item[field.alias])
+            : data[field.alias] = item[field.alias])
+        dispatch(rootConfigs[schema.collectionName].addItemOperation(data, closeForm))
+    }
     const getButtons = () => {
         return buttons
             ? buttons
@@ -63,7 +58,7 @@ const NewItem = ({newItem, buttons, toggleNewItemForm, schema}) => {
                 {newItem.fields.map(field =>
                     <label key={field.alias} className='newItemFieldLabel'>
                         <span className='newItemFieldTitle'>{field.title}</span>
-                        <input type={getType(field.alias)} className="newItemInput" name={field.alias}
+                        <input type={field.type || 'text'} className="newItemInput" name={field.alias}
                                onChange={onHandleChange}
                                value={item[field.alias]}/>
                     </label>)}

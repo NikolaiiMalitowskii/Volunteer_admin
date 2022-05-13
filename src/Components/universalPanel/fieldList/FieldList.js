@@ -1,5 +1,5 @@
 import {FieldListStyled} from "./FieldListStyled";
-import {getEditorIcon} from "../../../icons/editor.config";
+import {getEditorIcon} from "../../../icons/common";
 
 const FieldList = ({fields, item}) => {
     return (
